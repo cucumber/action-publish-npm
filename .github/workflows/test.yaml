@@ -17,7 +17,8 @@ jobs:
           node-version: '16'
       - name: Write git SHA into package description
         run: |
-          sed 's/\\$GITHUB_SHA/${{ github.sha }}/' package.json > package.json
+          sed -i '' -e 's/GITHUB_SHA/${{ github.sha }}/' package.json
+          cat package.json
         working-directory: "javascript"
       - name: Test the action
         uses: ./
