@@ -1,7 +1,7 @@
 {
   "name": "@cucumber/test-release-automation",
   "version": "0.0.0",
-  "description": "Dummy package to test release automation scripts GITHUB_SHA",
+  "description": "Dummy package to test release automation scripts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

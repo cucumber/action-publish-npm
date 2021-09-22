@@ -15,12 +15,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Write git SHA into package description
+      - name: Set unique package version
+        id: set-version
         run: |
-          pwd
-          ls -la
-          sed -i 's/GITHUB_SHA/${{ github.sha }}/' package.json
-          cat package.json
+          version=0.0.$GITHUB_RUN_NUMBER
+          npm version $version
+          echo "::set-output name=version::$version"
         working-directory: "javascript"
       - name: Test the action
         uses: ./
@@ -30,8 +30,8 @@ jobs:
       - name: Get latest package info
         id: latest-npm
         run: |
-          description=$(npm search @cucumber/test-release-automation --parseable | cut -d$'\t' -f 2)
-          echo "::set-output name=description::$description"
-      - name: Assert that latest published package descriptions is as expected
+          version=$(npm search @cucumber/test-release-automation --parseable | cut -d$'\t' -f 5)
+          echo "::set-output name=version::$version"
+      - name: Assert that latest published package version is as expected
         run: |
-          [[ "${{ steps.latest-gem.outputs.description }}" = "Dummy package to test release automation scripts ${{ github.sha}}" ]]
+          [[ "${{ steps.latest-gem.outputs.version }}" = "0.0.${{ github.run_number }}"
