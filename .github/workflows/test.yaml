@@ -30,6 +30,7 @@ jobs:
       - name: Get latest package info
         id: latest-npm
         run: |
+          sleep 5
           version=$(npm search @cucumber/test-release-automation --parseable | cut -d$'\t' -f 5)
           echo "::set-output name=version::$version"
       - name: Assert that latest published package version is as expected
