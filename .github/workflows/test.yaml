@@ -1,0 +1,34 @@
+name: Test
+
+on: 
+  push:
+    branches:
+      - "!release/*"
+
+jobs:
+  test-publish-gem:
+    name: It publishes an NPM package in a folder
+    runs-on: ubuntu-latest
+    environment: Publish to NPM
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Write package version
+        run: |
+          npm version 0.0.${{ github.sha }}
+        working-directory: "javascript"
+      - name: Test the action
+        uses: ./
+        with:
+          npm-token: ${{ secrets.NPM_TOKEN }}
+          working-directory: "javascript"
+      - name: Get latest package info
+        id: latest-npm
+        run: |
+          version=$(npm search @cucumber/test-release-automation --parseable | cut -d$'\t' -f 5)
+          echo "::set-output name=version::$version"
+      - name: Assert that latest published package version is as expected
+        run: |
+          [[ "${{ steps.latest-gem.outputs.version }}" = "0.0.${{ github.sha}}" ]]

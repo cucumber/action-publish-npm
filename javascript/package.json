@@ -1,0 +1,19 @@
+{
+  "name": "@cucumber/test-release-automation",
+  "version": "0.0.0",
+  "description": "Dummy package to test release automation scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cucumber-actions/publish-npm.git"
+  },
+  "author": "Matt Wynne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cucumber-actions/publish-npm/issues"
+  },
+  "homepage": "https://github.com/cucumber-actions/publish-npm#readme"
+}
