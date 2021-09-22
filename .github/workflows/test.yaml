@@ -19,7 +19,7 @@ jobs:
         run: |
           pwd
           ls -la
-          sed -i '' -e 's/GITHUB_SHA/${{ github.sha }}/' package.json
+          sed -i 's/GITHUB_SHA/${{ github.sha }}/' package.json
           cat package.json
         working-directory: "javascript"
       - name: Test the action
