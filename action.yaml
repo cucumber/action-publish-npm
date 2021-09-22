@@ -10,8 +10,6 @@ inputs:
     default: "."
 runs:
   using: "composite"
-  defaults:
-    working-directory: ${{ inputs.working-directory }}
   steps:
     - name: write tempoarary project .npmrc
       run: |
@@ -19,13 +17,16 @@ runs:
         //registry.npmjs.org/:_authToken=${NPM_TOKEN}
         END
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
     - name: publish package
       run: |
         npm publish
       env:
         NPM_TOKEN: ${{ inputs.npm-token }}
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
     - name: Remove temporary .npmrc file
       run: |
         rm .npmrc
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
