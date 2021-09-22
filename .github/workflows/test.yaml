@@ -3,7 +3,7 @@ name: Test
 on: 
   push:
     branches:
-      - "!release/*"
+      - main
 
 jobs:
   test-publish-gem:
