@@ -17,6 +17,8 @@ jobs:
           node-version: '16'
       - name: Write git SHA into package description
         run: |
+          pwd
+          ls -la
           sed -i '' -e 's/GITHUB_SHA/${{ github.sha }}/' package.json
           cat package.json
         working-directory: "javascript"
