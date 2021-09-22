@@ -34,4 +34,4 @@ jobs:
           echo "::set-output name=version::$version"
       - name: Assert that latest published package version is as expected
         run: |
-          [[ "${{ steps.latest-gem.outputs.version }}" = "0.0.${{ github.run_number }}"
+          [[ "${{ steps.latest-npm.outputs.version }}" = "0.0.${{ github.run_number }}" ]]
