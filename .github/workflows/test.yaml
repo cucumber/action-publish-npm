@@ -31,7 +31,7 @@ jobs:
         id: latest-npm
         run: |
           description=$(npm search @cucumber/test-release-automation --parseable | cut -d$'\t' -f 2)
-          echo "::set-output name=descriptions::$descriptions"
+          echo "::set-output name=description::$description"
       - name: Assert that latest published package descriptions is as expected
         run: |
-          [[ "${{ steps.latest-gem.outputs.descriptions }}" = "Dummy package to test release automation scripts ${{ github.sha}}" ]]
+          [[ "${{ steps.latest-gem.outputs.description }}" = "Dummy package to test release automation scripts ${{ github.sha}}" ]]
