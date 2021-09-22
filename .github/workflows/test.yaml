@@ -27,11 +27,11 @@ jobs:
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
           working-directory: "javascript"
-      - name: Get latest package info
-        id: latest-npm
-        run: |
-          version=$(curl https://registry.npmjs.org/@cucumber/test-release-automation | jq -r '."dist-tags".latest')
-          echo "::set-output name=version::$version"
       - name: Assert that latest published package version is as expected
+        timeout-minutes: 1
         run: |
-          [[ "${{ steps.latest-npm.outputs.version }}" = "0.0.${{ github.run_number }}" ]]
+          version=0.0.0
+          while [[ "$version" != "0.0.${{ github.run_number }}" ]]
+          do
+            version=$(curl https://registry.npmjs.org/@cucumber/test-release-automation | jq -r '."dist-tags".latest')
+          done
