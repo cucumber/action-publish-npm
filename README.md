@@ -9,7 +9,7 @@ Needs Node to be installed first.
 ## Inputs
 
 * `npm-token`
-* `working_directory` (default `.`)
+* `working-directory` (default `.`)
 
 ## Example
 
