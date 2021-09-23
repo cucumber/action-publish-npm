@@ -31,8 +31,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Test the action
-        uses: cucumber/action-publish-npm@v1.0.0
+      - uses: cucumber/action-publish-npm@v1.0.0
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
           working-directory: "packages/ui"
