@@ -1,6 +1,6 @@
 [![Test](https://github.com/cucumber-actions/publish-npm/actions/workflows/test.yaml/badge.svg)](https://github.com/cucumber-actions/publish-npm/actions/workflows/test.yaml)
 
-# publish-npm
+# action-publish-npm
 
 Publishes an NPM module to https://npmjs.com
 
