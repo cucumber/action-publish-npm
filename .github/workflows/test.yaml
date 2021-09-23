@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
+          cache-dependency-path: javascript/package-lock.json
       - name: Set unique package version
         id: set-version
         run: |
