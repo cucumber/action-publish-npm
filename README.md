@@ -32,6 +32,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
+          cache-dependency-path: packages/ui/package-lock.json
       - uses: cucumber/action-publish-npm@v1.0.0
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
