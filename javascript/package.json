@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cucumber-actions/publish-npm.git"
+    "url": "git+https://github.com/cucumber/action-publish-npm.git"
   },
   "author": "Matt Wynne",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cucumber-actions/publish-npm/issues"
+    "url": "https://github.com/cucumber/action-publish-npm/issues"
   },
-  "homepage": "https://github.com/cucumber-actions/publish-npm#readme"
+  "homepage": "https://github.com/cucumber/action-publish-npm#readme"
 }

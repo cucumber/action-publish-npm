@@ -1,4 +1,4 @@
-[![Test](https://github.com/cucumber-actions/publish-npm/actions/workflows/test.yaml/badge.svg)](https://github.com/cucumber-actions/publish-npm/actions/workflows/test.yaml)
+[![Test](https://github.com/cucumber/action-publish-npm/actions/workflows/test.yaml/badge.svg)](https://github.com/cucumber/action-publish-npm/actions/workflows/test.yaml)
 
 # action-publish-npm
 
@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: '16'
       - name: Test the action
-        uses: cucumber-actions/publish-npm@v1.0.0
+        uses: cucumber/action-publish-npm@v1.0.0
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
           working-directory: "packages/ui"
