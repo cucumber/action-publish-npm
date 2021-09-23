@@ -1,12 +1,12 @@
 name: Test
 
-on: 
+on:
   push:
     branches:
       - main
 
 jobs:
-  test-publish-gem:
+  test-publish-npm:
     name: It publishes an NPM package in a folder
     runs-on: ubuntu-latest
     environment: Publish to NPM
@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+          cache: 'npm'
       - name: Set unique package version
         id: set-version
         run: |

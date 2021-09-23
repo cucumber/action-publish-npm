@@ -16,7 +16,7 @@ Needs Node to be installed first.
 ```yaml
 name: Publish
 
-on: 
+on:
   push:
     branches:
       - "release/*"
@@ -31,6 +31,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+          cache: 'npm'
       - uses: cucumber/action-publish-npm@v1.0.0
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
