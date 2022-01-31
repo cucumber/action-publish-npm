@@ -38,5 +38,5 @@ jobs:
           # use an eventually loop as NPM's query doesn't seem to update immediately
           while [[ "$version" != "0.0.${{ github.run_number }}" ]]
           do
-            version=$(curl https://registry.npmjs.org/@cucumber/test-release-automation | jq -r '."dist-tags".a-special-tag')
+            version=$(curl https://registry.npmjs.org/@cucumber/test-release-automation | jq -r '."dist-tags"."a-special-tag"')
           done
