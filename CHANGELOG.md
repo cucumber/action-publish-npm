@@ -9,9 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add optional input for `npm-tag`
 
+## [v1.1.0] - 2022-01-31
+
 ## [v1.0.0] - 2021-09-21
 ### Added
 - Publish to NPM from a given `working-directory`
 
-[Unreleased]: https://github.com/cucumber/action-publish-npm/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/cucumber/action-publish-npm/compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/cucumber/action-publish-npm/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/cucumber/action-publish-npm/compare/v0.0.0...v1.0.0
