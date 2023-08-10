@@ -1,10 +1,14 @@
 name: Test
 
 on:
+  workflow_call:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
-      - renovate/*
+      - renovate/**
 
 jobs:
   test-publish-npm:
@@ -16,20 +20,18 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-          cache: 'npm'
-          cache-dependency-path: javascript/package-lock.json
       - name: Set unique package version
         id: set-version
         run: |
           version=0.0.$GITHUB_RUN_NUMBER
           npm version $version
           echo "::set-output name=version::$version"
-        working-directory: "javascript"
+        working-directory: "test"
       - name: Test the action
         uses: ./
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
-          working-directory: "javascript"
+          working-directory: "test"
           npm-tag: a-special-tag
       - name: Assert that latest published package version is as expected
         timeout-minutes: 1
