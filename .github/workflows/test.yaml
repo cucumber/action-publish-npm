@@ -26,6 +26,7 @@ jobs:
           version=0.0.$GITHUB_RUN_NUMBER
           npm version $version
           echo "::set-output name=version::$version"
+          echo "version=$version" >> $GITHUB_OUTPUT
         working-directory: "test"
       - name: Test the action
         uses: ./
