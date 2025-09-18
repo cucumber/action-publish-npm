@@ -2,6 +2,8 @@
 
 # action-publish-npm
 
+Deprecated: Use trusted publishing instead.
+
 Publishes an NPM module to https://npmjs.com
 
 Needs Node to be installed first.
